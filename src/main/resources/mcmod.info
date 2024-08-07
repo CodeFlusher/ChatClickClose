@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "${modid}",
+    "name": "Click Close",
+    "description": "Close chat when you click out of its bounds!",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+
+    "updateUrl": "",
+    "authorList": [
+      "CodeFlusher"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
