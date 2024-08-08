@@ -20,9 +20,11 @@ val modid: String by project
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(8))
 }
-
+//lateinit var mappings : Dependency;
 // Minecraft configuration:
 loom {
+    officialMojangMappings()
+//    mappings = "net.minecraftforge.mappings"
     log4jConfigs.from(file("log4j2.xml"))
     launchConfigs {
         "client" {
@@ -69,9 +71,11 @@ val shadowImpl: Configuration by configurations.creating {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.8.9")
-    mappings("de.oceanlabs.mcp:mcp_stable:22-1.8.9")
-    forge("net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9")
+    minecraft("com.mojang:minecraft:1.12.2")
+
+//    mappings(mappings)
+    forge("net.minecraftforge:forge:1.12.2-14.23.0.2491")
+    mappings("de.oceanlabs.mcp:mcp_stable:39-1.12")
 
     // If you don't want mixins, remove these lines
     shadowImpl("org.spongepowered:mixin:0.7.11-SNAPSHOT") {
