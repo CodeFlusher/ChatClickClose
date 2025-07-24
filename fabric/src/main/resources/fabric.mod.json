@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "chatclickclose",
+  "version": "${version}",
+  "name": "ChatClickClose",
+  "description": "Close the chat with ease!",
+  "authors": [
+    "CodeFlusher"
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/chatclickclose/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "me.codeflusher.chatclickclose.fabric.ChatClickCloseFabric"
+    ],
+    "client": [
+      "me.codeflusher.chatclickclose.fabric.client.ChatclickcloseFabricClient"
+    ]
+  },
+  "mixins": [
+    "chatclickclose.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

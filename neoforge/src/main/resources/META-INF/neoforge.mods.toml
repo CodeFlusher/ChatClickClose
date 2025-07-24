@@ -1,0 +1,31 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "chatclickclose"
+version = "${version}"
+displayName = "ChatClickClose"
+authors = "CodeFlusher"
+description = '''
+Close the chat with ease!
+'''
+#logoFile = ""
+
+[[dependencies.chatclickclose]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.chatclickclose]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.4,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[mixins]]
+config = "chatclickclose.mixins.json"
