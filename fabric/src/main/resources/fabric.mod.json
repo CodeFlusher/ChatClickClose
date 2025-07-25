@@ -16,9 +16,6 @@
   "entrypoints": {
     "main": [
       "me.codeflusher.chatclickclose.fabric.ChatClickCloseFabric"
-    ],
-    "client": [
-      "me.codeflusher.chatclickclose.fabric.client.ChatclickcloseFabricClient"
     ]
   },
   "mixins": [
@@ -27,7 +24,7 @@
   "depends": {
     "fabricloader": ">=0.16.14",
     "minecraft": "~1.21.4",
-    "java": ">=21",
+    "java": ">=21"
   },
   "suggests": {
     "another-mod": "*"

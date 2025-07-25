@@ -3,7 +3,6 @@ package me.codeflusher.chatclickclose.mixins;
 import lombok.extern.slf4j.Slf4j;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.ChatComponent;
-import net.minecraft.util.Mth;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -30,12 +29,11 @@ public abstract class ChatComponentMixin {
 
     @Inject(at = @At("HEAD"), method = "handleChatQueueClicked", cancellable = true)
     public void closeChat(double x, double y, CallbackInfoReturnable<Boolean> cir) {
-//        log.info("Chat click registered!");
         var chatWidth = this.getWidth();
-        var chatHeight = this.getHeight();
-        var fixedY = minecraft.getWindow().getHeight() - y;
-//        log.info("Positions: {}, {}, width: {}, height {}", x, fixedY, chatWidth, chatHeight);
-        if (chatWidth < x || chatHeight < y) {
+        var chatHeight = this.getHeight() + BOTTOM_MARGIN;
+        var fixedY = minecraft.getWindow().getGuiScaledHeight() - y;
+        log.info("Positions: {}, {}, Dimensions: {}, {}", x, fixedY, chatWidth, chatHeight);
+        if (chatWidth < x || chatHeight < fixedY) {
             this.minecraft.setScreen(null);
             cir.cancel();
         }
